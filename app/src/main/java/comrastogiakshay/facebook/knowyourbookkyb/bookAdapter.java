@@ -1,14 +1,21 @@
 package comrastogiakshay.facebook.knowyourbookkyb;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
     public class bookAdapter extends ArrayAdapter<OnBook> {
@@ -30,9 +37,9 @@ import java.util.ArrayList;
 
 
 
-        TextView magnitude = (TextView) ListItem.findViewById(R.id.magnitude);
+        ImageView magnitude = (ImageView) ListItem.findViewById(R.id.book_Cover);
 
-        magnitude.setText(currentBook.gettitle());
+//        magnitude.setImageDrawable(fetchBookCoverImage().gettitle());
 
         TextView placeA = (TextView) ListItem.findViewById(R.id.location_offset);
 
@@ -54,4 +61,16 @@ import java.util.ArrayList;
 
         return ListItem;
         }
+        public Drawable fetchBookCoverImage(String ImageURL){
+        try {
+            InputStream is = (InputStream) new URL(ImageURL).getContent();
+            Drawable d = Drawable.createFromStream(is,"CoverImage");
+            return d;
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

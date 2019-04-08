@@ -9,17 +9,15 @@
     android:paddingRight="16dp"
     android:paddingStart="16dp">
 
-    <TextView
-        android:id="@+id/magnitude"
+    <ImageView
+        android:id="@+id/book_Cover"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_gravity="center_vertical"
 
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        tools:text="8.9" />
+        android:textColor="@android:color/white"/>
 
     <LinearLayout
         android:id="@+id/text_container"

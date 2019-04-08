@@ -1,20 +1,22 @@
 package comrastogiakshay.facebook.knowyourbookkyb;
 
+import android.graphics.drawable.Drawable;
+
 public class OnBook {
     private String mTitle;
     private String mAuthors;
     private String mPublisher;
     private String mWebReaderLink;
     private String mDescription;
-    //private String mURL;
+    private Drawable mSmallThumbnail;
 
-    public OnBook(String title, String authors, String publisher, String webReaderLink, String description) {
+    public OnBook(String title, String authors, String publisher, String webReaderLink, String description, Drawable smallThumbnail) {
         mTitle = title;
         mAuthors = authors;
         mPublisher = publisher;
         mWebReaderLink = webReaderLink;
         mDescription = description;
-       // mURL = URL;
+        mSmallThumbnail = smallThumbnail;
 
     }
 
@@ -38,8 +40,8 @@ public class OnBook {
         return mDescription;
     }
 
-//    //public String getURL() {
-//        return mURL;
-//    }
+    public Drawable getsmallThumbnail() {
+        return mSmallThumbnail;
+    }
 
 }

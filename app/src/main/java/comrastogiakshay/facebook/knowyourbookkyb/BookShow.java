@@ -11,7 +11,7 @@ import java.util.List;
 public class BookShow extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<OnBook>> {
     private TextView mEmptyView;
     // assigning USGS HTTPS site to USGS_Url.
-    private static final String google_books_url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&orderby=time&minmag=6&limit=10";
+    private static final String google_books_url = "https://www.googleapis.com/books/v1/volumes?q=knowledge";
     // Adapter for the list of Books.
     private bookAdapter mAdapter;
     private static final String LOG_TAG = BookShow.class.getName();
