@@ -39,7 +39,7 @@ import java.util.ArrayList;
 
         ImageView magnitude = (ImageView) ListItem.findViewById(R.id.book_Cover);
 
-//        magnitude.setImageDrawable(fetchBookCoverImage().gettitle());
+        magnitude.setImageDrawable(currentBook.getsmallThumbnail());
 
         TextView placeA = (TextView) ListItem.findViewById(R.id.location_offset);
 
