@@ -5,10 +5,6 @@ import android.content.Context;
 
 import java.util.List;
 
-import android.content.AsyncTaskLoader;
-        import android.content.Context;
-
-        import java.util.List;
 
 public class bookLoader extends AsyncTaskLoader<List<OnBook>> {
     private String urls;
