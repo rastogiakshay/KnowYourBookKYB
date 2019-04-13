@@ -81,7 +81,7 @@ public class SearchBook extends AppCompatActivity implements LoaderManager.Loade
         //listView.setEmptyView(mEmptyView);
         Intent intent = getIntent();
 
-            QueryString = intent.getStringExtra("Search_String");
+            QueryString = formatSearchText(intent.getStringExtra("Search_String"));
 
 
             appendURL = USGS_Url + QueryString;
@@ -103,8 +103,8 @@ public class SearchBook extends AppCompatActivity implements LoaderManager.Loade
     public void onLoadFinished(Loader<List<OnBook>> loader, List<OnBook> books) {
         Log.i(LOG_TAG, appendURL);
         //
-//        View progressBar = (View) findViewById(R.id.Loading);
-//        progressBar.setVisibility(View.GONE);
+           View progressBar = (View) findViewById(R.id.Loading);
+           progressBar.setVisibility(View.GONE);
 
         //
         mAdapter.clear();
@@ -125,22 +125,22 @@ public class SearchBook extends AppCompatActivity implements LoaderManager.Loade
         mAdapter.clear();
 
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);
-
-        // Associate searchable configuration with the SearchView
-        SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
-
-        return true;
-    }
+//
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu, menu);
+//
+//        // Associate searchable configuration with the SearchView
+//        SearchManager searchManager =
+//                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//        SearchView searchView =
+//                (SearchView) menu.findItem(R.id.search).getActionView();
+//        searchView.setSearchableInfo(
+//                searchManager.getSearchableInfo(getComponentName()));
+//
+//        return true;
+//    }
 
 //    @Override
 //    protected void onNewIntent(Intent intent) {
@@ -177,4 +177,11 @@ public class SearchBook extends AppCompatActivity implements LoaderManager.Loade
 
 
 //    }
+    private String formatSearchText(String string) {
+        String trimmedString = string.trim();
+    do {
+        trimmedString = trimmedString.replace(" ", "+");
+    } while (trimmedString.contains(" "));
+    return trimmedString;
+    }
 }

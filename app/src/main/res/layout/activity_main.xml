@@ -8,15 +8,16 @@
         android:layout_height="wrap_content"
         android:orientation = "vertical">
 
-    <TextView android:id="@+id/Intro"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/intro_message"
-        android:textSize="20sp"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/Intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:paddingTop="10dp"
+            android:text="@string/intro_message"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+
+            />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -43,9 +44,11 @@
 
                 <EditText
                     android:id="@+id/fetch_text"
-                    android:layout_width="44dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:autofillHints="Search"
                     android:inputType="text" />
 
@@ -53,21 +56,22 @@
             </LinearLayout>
 
         </FrameLayout>
+
         <Button
             android:id="@+id/search_btn"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
 
-            android:layout_marginEnd="135dp"
             android:layout_marginStart="135dp"
+            android:layout_marginEnd="135dp"
 
             android:layout_weight="3"
             android:background="#965f7a9c"
             android:gravity="center_horizontal"
             android:onClick="onClick"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-            android:text="Search" />
+            android:padding="10dp"
+            android:text="Search"
+            android:textAlignment="center" />
     </LinearLayout>
 
 </ScrollView>
