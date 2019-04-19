@@ -2,11 +2,13 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/ic_launcher_background">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation = "vertical">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/Intro"
@@ -17,7 +19,8 @@
             android:text="@string/intro_message"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
 
-            />
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -62,14 +65,13 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
 
-            android:layout_marginStart="135dp"
-            android:layout_marginEnd="135dp"
+            android:layout_marginStart="160dp"
 
             android:layout_weight="3"
             android:background="#965f7a9c"
             android:gravity="center_horizontal"
             android:onClick="onClick"
-            android:padding="10dp"
+            android:padding="15dp"
             android:text="Search"
             android:textAlignment="center" />
     </LinearLayout>
